@@ -3,20 +3,31 @@ public class DoubleLinkedListQueue<T> implements DoubleEndedQueue<T> {
     public DequeNode<T> first, last = null;
 
     public void append(DequeNode<T> node) {
-
-        last.setNext(node);
-        node.setPrevious(last);
-        node.setNext(null);
-        last = node;
+        if(first == null) {
+            first = node;
+            last = node;
+            node.setPrevious(null);
+            node.setNext(null);
+        } else {
+            last.setNext(node);
+            node.setPrevious(last);
+            node.setNext(null);
+            last = node;
+        }
     }
 
     public void appendLeft(DequeNode<T> node) {
-
-
-        first.setPrevious(node);
-        node.setPrevious(null);
-        node.setNext(first);
-        first = node;
+        if (first == null) {
+            first = node;
+            last = node;
+            node.setPrevious(null);
+            node.setNext(null);
+        } else {
+            first.setPrevious(node);
+            node.setPrevious(null);
+            node.setNext(first);
+            first = node;
+        }
     }
 
 
