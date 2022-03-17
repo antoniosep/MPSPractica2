@@ -1,0 +1,35 @@
+DequeNodeTest:
+
+anyadirNodoSiguiente:
+Añadir un nodo siguiente a otro nodo 
+
+anyadirNodoPrevio:
+Añadir un nodo previo a otro nodo 
+
+set_GetCorrectos:
+Añadir un valor a un nodo de forma correcta
+
+constructorCorrecto:
+Si añadimos los next y previous en el constructor funciona de forma correcta
+
+firstLastTerminal:
+Tres nodos consecutivos (first, notTerminal y last) funcionan los booleanos correspondientes
+
+
+DoubleEndedQueue:
+
+Probar appendLeft a lista vacia funciona correctamente
+
+Probar append a lista vacia funciona correctamente
+
+Probar que peekfirst y peeklast funcionan correctamente tras varios append
+1. ambos a null en un principio
+2. ambos a nodo1 cuando lo añadimos a lista vacia
+3. nodo1 el 1ero, nodo2 el ultimo
+
+Probar que DeleteFirst y DeleteLast funcionan cuando hay 1 solo valor
+
+Probar que peekfirst y peeklast funcionan correctamente tras varios delete a una lista rellena
+
+Probar size() con listas de 0, 1 y 5 nodos
+
