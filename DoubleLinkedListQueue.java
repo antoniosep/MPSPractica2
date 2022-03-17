@@ -32,14 +32,29 @@ public class DoubleLinkedListQueue<T> implements DoubleEndedQueue<T> {
 
 
     public void deleteFirst() {
+		if (first == last) {
+			first = null;
+			last = null;
+		} else {
+			first = first.getNext();
+			first.setPrevious(null);	
+		}		
+		
+		
+		
         first = first.getNext();
         first.setPrevious(null);
     }
 
 
     public void deleteLast() {
-        last = last.getPrevious();
-        last.setNext(null);
+		if (first == last) {
+			first = null;
+			last = null;
+		} else {
+	        last = last.getPrevious();
+			last.setNext(null);		
+		}
     }
 
     public DequeNode<T> peekFirst() {
