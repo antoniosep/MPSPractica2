@@ -1,4 +1,3 @@
-
 import java.util.Comparator;
 
 public class DoubleLinkedListQueue<T> implements DoubleEndedQueue<T> {
@@ -36,13 +35,23 @@ public class DoubleLinkedListQueue<T> implements DoubleEndedQueue<T> {
 
     public void deleteFirst() {
         first = first.getNext();
-        first.setPrevious(null);
+        if(first != null) {
+            first.setPrevious(null);
+        } else {
+            last = null;
+        }
+
     }
 
 
     public void deleteLast() {
         last = last.getPrevious();
-        last.setNext(null);
+        if(last != null) {
+            last.setNext(null);
+        } else {
+            first = null;
+        }
+
     }
 
     public DequeNode<T> peekFirst() {
@@ -87,12 +96,16 @@ public class DoubleLinkedListQueue<T> implements DoubleEndedQueue<T> {
     }
 
     public void delete(DequeNode<T> node) {
-
-        if(!node.isFirstNode())
+        if(peekFirst() == node) {
+            deleteFirst();
+        } else if(peekLast() == node) {
+            deleteLast();
+        } else {
             node.getPrevious().setNext(node.getNext());
-
-        if(!node.isLastNode())
             node.getNext().setPrevious(node.getPrevious());
+        }
+
+
 
     }
 
