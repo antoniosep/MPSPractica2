@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class DoubleLinkedListQueue<T> implements DoubleEndedQueue<T> {
 
     public DequeNode<T> first, last = null;
@@ -91,5 +93,36 @@ public class DoubleLinkedListQueue<T> implements DoubleEndedQueue<T> {
         if(!node.isLastNode())
             node.getNext().setPrevious(node.getPrevious());
 
+    }
+
+    public void sort(Comparator<T> comparator){
+        DequeNode<T> firstOrdered = peekFirst();
+        for(int i = 1; i<size(); i++){
+            DequeNode<T> nuevo = getAt(i);
+
+            DequeNode<T> previo = firstOrdered.getPrevious();
+            DequeNode<T> actual = firstOrdered;
+
+            while(actual!=null && comparator.compare(actual.getItem(), nuevo.getItem())>=0){
+                previo = actual;
+                actual = actual.getNext();
+            }
+
+            if(previo == null){
+                firstOrdered = nuevo;
+                nuevo.setNext(actual);
+                actual.setPrevious(nuevo);
+            }else{
+                previo.setNext(nuevo);
+                nuevo.setPrevious(previo);
+                nuevo.setNext(actual);
+
+                if(actual != null){
+                    actual.setPrevious(nuevo);
+                }
+            }
+        }
+
+        first = firstOrdered;
     }
 }
