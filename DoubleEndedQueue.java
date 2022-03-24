@@ -11,8 +11,18 @@ public interface DoubleEndedQueue<T> {
     int size() ;
 
     // Complex operations
+<<<<<<< HEAD
     DequeNode<T> getAt(int position) ;
     DequeNode<T> find (T item) ;
     void delete(DequeNode<T> node) ;
     void sort(Comparator<T> comparator) ;
+=======
+    // (Estas operaciones se incluirán más adelante para ser realizadas en la segunda
+    // sesión de laboratorio de esta práctica.)
+    DequeNode<T> getAt(int position) ;
+    DequeNode<T> find (T item) ;
+    void delete(DequeNode<T> node) ;
+    void sort(Comparator<?> comparator) ;
+
+>>>>>>> 13b743ea83116f04d7550103554644bf984b6279
 }

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import java.util.*;
+=======
+import java.util.Comparator;
+>>>>>>> 13b743ea83116f04d7550103554644bf984b6279
 
 public class DoubleLinkedListQueue<T> implements DoubleEndedQueue<T> {
 
@@ -95,6 +99,7 @@ public class DoubleLinkedListQueue<T> implements DoubleEndedQueue<T> {
 
     }
 
+<<<<<<< HEAD
     public void sort(Comparator<T> comparator){
         DequeNode<T> firstOrdered = peekFirst();
         for(int i = 1; i<size(); i++){
@@ -124,5 +129,9 @@ public class DoubleLinkedListQueue<T> implements DoubleEndedQueue<T> {
         }
 
         first = firstOrdered;
+=======
+    public void sort(Comparator<?> comparator) {
+
+>>>>>>> 13b743ea83116f04d7550103554644bf984b6279
     }
 }
