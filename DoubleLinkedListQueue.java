@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-import java.util.*;
-=======
+
 import java.util.Comparator;
->>>>>>> 13b743ea83116f04d7550103554644bf984b6279
 
 public class DoubleLinkedListQueue<T> implements DoubleEndedQueue<T> {
 
@@ -99,39 +96,34 @@ public class DoubleLinkedListQueue<T> implements DoubleEndedQueue<T> {
 
     }
 
-<<<<<<< HEAD
-    public void sort(Comparator<T> comparator){
+    public void sort(Comparator<T> comparator) {
         DequeNode<T> firstOrdered = peekFirst();
-        for(int i = 1; i<size(); i++){
+        for (int i = 1; i < size(); i++) {
             DequeNode<T> nuevo = getAt(i);
 
             DequeNode<T> previo = firstOrdered.getPrevious();
             DequeNode<T> actual = firstOrdered;
 
-            while(actual!=null && comparator.compare(actual.getItem(), nuevo.getItem())>=0){
+            while (actual != null && comparator.compare(actual.getItem(), nuevo.getItem()) >= 0) {
                 previo = actual;
                 actual = actual.getNext();
             }
 
-            if(previo == null){
+            if (previo == null) {
                 firstOrdered = nuevo;
                 nuevo.setNext(actual);
                 actual.setPrevious(nuevo);
-            }else{
+            } else {
                 previo.setNext(nuevo);
                 nuevo.setPrevious(previo);
                 nuevo.setNext(actual);
 
-                if(actual != null){
+                if (actual != null) {
                     actual.setPrevious(nuevo);
                 }
             }
         }
 
         first = firstOrdered;
-=======
-    public void sort(Comparator<?> comparator) {
-
->>>>>>> 13b743ea83116f04d7550103554644bf984b6279
     }
 }
