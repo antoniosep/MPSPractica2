@@ -58,6 +58,41 @@ public class DoubleLinkedListQueueTest {
         assertEquals(cola.peekFirst(), nodo2);
         assertEquals(cola.peekLast(), nodo1);
     }
+	
+	
+    @Test
+    void DeleteFirstSingleNode() {
+        cola.appendLeft(nodo1);
+        cola.deleteFirst();
+        assertNull(cola.peekFirst());
+        assertNull(cola.peekLast());
+    }
+
+    @Test
+    void DeleteLastSingleNode() {
+        cola.appendLeft(nodo1);
+        cola.deleteLast();
+        assertNull(cola.peekFirst());
+        assertNull(cola.peekLast());
+    }
+
+    @Test
+    void SizeEmptyQueue() {
+        assertEquals(cola.size(), 0);
+    }
+
+    void SizeOneNode() {
+        cola.append(nodo1);
+        assertEquals(cola.size(), 1);
+    }
+
+    void SizeThreeNodes() {
+        cola.append(nodo1);
+        cola.append(nodo2);
+        cola.append(nodo3);
+        assertEquals(cola.size(), 3);
+    }
+	
 
     @Test
     void sortEmptyQueue(){
