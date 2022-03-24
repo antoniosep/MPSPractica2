@@ -1,3 +1,5 @@
+import java.util.Comparator;
+
 public class DoubleLinkedListQueue<T> implements DoubleEndedQueue<T> {
 
     public DequeNode<T> first, last = null;
@@ -90,6 +92,10 @@ public class DoubleLinkedListQueue<T> implements DoubleEndedQueue<T> {
 
         if(!node.isLastNode())
             node.getNext().setPrevious(node.getPrevious());
+
+    }
+
+    public void sort(Comparator<?> comparator) {
 
     }
 }
