@@ -13,12 +13,10 @@ public class DoubleLinkedListQueueTest {
 
     @BeforeEach
     void setup() {
-        nodo1 = new DequeNode<>(1, null, null);
-        nodo2 = new DequeNode<>(2, null, nodo1);
-        nodo3 = new DequeNode<>(3, null, nodo2);
+        nodo1 = new DequeNode<>(1, nodo1, nodo1);
+        nodo2 = new DequeNode<>(2, nodo2, nodo2);
+        nodo3 = new DequeNode<>(3, nodo3, nodo3);
 
-        nodo1.setNext(nodo2);
-        nodo2.setNext(nodo3);
         DoubleLinkedListQueue<Integer> cola = new DoubleLinkedListQueue<Integer>();
     }
 
@@ -154,5 +152,29 @@ public class DoubleLinkedListQueueTest {
         cola.append(nodo2);
         cola.append(nodo3);
         assertEquals(cola.size(), 3);
+    }
+
+    @Test
+    void sortEmptyQueue(){
+        cola.sort(Integer::compareTo);
+        assertNull(cola.peekFirst());
+    }
+
+    @Test
+    void sortOneNode(){
+        cola.append(nodo1);
+        cola.sort(Integer::compareTo);
+        assertEquals(cola.peekFirst(), nodo1);
+    }
+
+    @Test
+    void sortTwoNodes(){
+        cola.append(nodo2);
+        cola.append(nodo1);
+
+        cola.sort(Integer::compareTo);
+
+        assertEquals(cola.peekFirst(), nodo1);
+        assertEquals(cola.peekLast(), nodo2);
     }
 }
