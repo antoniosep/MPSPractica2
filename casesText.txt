@@ -18,18 +18,50 @@ Tres nodos consecutivos (first, notTerminal y last) funcionan los booleanos corr
 
 DoubleEndedQueue:
 
-Probar appendLeft a lista vacia funciona correctamente
+peekEmptyQueue:
+Hacer peekFirst y peekLast a una lista vacía
 
-Probar append a lista vacia funciona correctamente
+appendLeftEmptyQueue:
+Añadir un nodo a una lista vacía mediante appendLeft
 
-Probar que peekfirst y peeklast funcionan correctamente tras varios append
-1. ambos a null en un principio
-2. ambos a nodo1 cuando lo añadimos a lista vacia
-3. nodo1 el 1ero, nodo2 el ultimo
+appendEmptyQueue:
+Añadir un nodo a una lista vacía mediante append
 
-Probar que DeleteFirst y DeleteLast funcionan cuando hay 1 solo valor
+appendLeftEmptyQueuex2:
+Añadir dos nodos a una lista vacía mediante appendLeft
 
-Probar que peekfirst y peeklast funcionan correctamente tras varios delete a una lista rellena
+appendEmptyQueuex2:
+Añadir dos nodos a una lista vacía mediante append
 
-Probar size() con listas de 0, 1 y 5 nodos
+deleteFirstSingleNode:
+Borrar el único nodo de una cola mediante deleteFirst
+
+deleteFirstMultipleNodes:
+Borrar el primer nodo de una cola con múltiples nodos mediante deleteFirst
+
+deleteLastSingleNode:
+Borrar el único nodo de una cola mediante deleteLast
+
+deleteLastMultipleNodes:
+Borrar el último nodo de una cola con múltiples nodos mediante deleteLast
+
+deleteMiddleNode:
+Borrar el nodo intermedio de una cola de 3 nodos mediante delete
+
+deleteEdges:
+Borrar el primer y último nodos de una cola de 3 nodos mediante delete
+
+sizeEmptyQueue, sizeOneNode, sizeThreeNodes
+Comprobar el tamaño de colas con 0, 1 y 3 nodos respectivamente
+
+
+
+
+
+
+
+
+
+
+
 
