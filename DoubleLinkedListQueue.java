@@ -32,29 +32,14 @@ public class DoubleLinkedListQueue<T> implements DoubleEndedQueue<T> {
 
 
     public void deleteFirst() {
-		if (first == last) {
-			first = null;
-			last = null;
-		} else {
-			first = first.getNext();
-			first.setPrevious(null);	
-		}		
-		
-		
-		
         first = first.getNext();
         first.setPrevious(null);
     }
 
 
     public void deleteLast() {
-		if (first == last) {
-			first = null;
-			last = null;
-		} else {
-	        last = last.getPrevious();
-			last.setNext(null);		
-		}
+        last = last.getPrevious();
+        last.setNext(null);
     }
 
     public DequeNode<T> peekFirst() {
@@ -75,5 +60,36 @@ public class DoubleLinkedListQueue<T> implements DoubleEndedQueue<T> {
         }
 
         return contador;
+    }
+
+    public DequeNode<T> getAt(int position) {
+        int contador = 0;
+        DequeNode<T> actual = peekFirst();
+
+        while(contador < position) {
+            contador++;
+            actual= actual.getNext();
+        }
+
+        return actual;
+    }
+
+    public DequeNode<T> find (T item) {
+        DequeNode<T> actual = peekFirst();
+        while ((actual != null) && (actual.getItem() != item) ) {
+            actual= actual.getNext();
+        }
+
+        return actual;
+    }
+
+    public void delete(DequeNode<T> node) {
+
+        if(!node.isFirstNode())
+            node.getPrevious().setNext(node.getNext());
+
+        if(!node.isLastNode())
+            node.getNext().setPrevious(node.getPrevious());
+
     }
 }
