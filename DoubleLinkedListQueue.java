@@ -76,11 +76,15 @@ public class DoubleLinkedListQueue<T> implements DoubleEndedQueue<T> {
 
     public DequeNode<T> getAt(int position) {
         int contador = 0;
-        DequeNode<T> actual = peekFirst();
+        DequeNode<T> actual = null;
 
-        while(contador < position) {
-            contador++;
-            actual= actual.getNext();
+        if(position>=0){
+            actual = peekFirst();
+
+            while(actual!=null && contador < position) {
+                contador++;
+                actual= actual.getNext();
+            }
         }
 
         return actual;
@@ -110,14 +114,18 @@ public class DoubleLinkedListQueue<T> implements DoubleEndedQueue<T> {
     }
 
     public void sort(Comparator<T> comparator) {
-        DequeNode<T> firstOrdered = peekFirst();
+        DequeNode<T> firstOrdered = null;
+        if(size()>0){
+            firstOrdered = new DequeNode<>(first.getItem(), null, null);
+        }
+
         for (int i = 1; i < size(); i++) {
-            DequeNode<T> nuevo = getAt(i);
+            DequeNode<T> nuevo = new DequeNode<>(getAt(i).getItem(), null, null);
 
             DequeNode<T> previo = firstOrdered.getPrevious();
             DequeNode<T> actual = firstOrdered;
 
-            while (actual != null && comparator.compare(actual.getItem(), nuevo.getItem()) >= 0) {
+            while (actual != null && comparator.compare(nuevo.getItem(), actual.getItem()) >= 0) {
                 previo = actual;
                 actual = actual.getNext();
             }
@@ -125,6 +133,7 @@ public class DoubleLinkedListQueue<T> implements DoubleEndedQueue<T> {
             if (previo == null) {
                 firstOrdered = nuevo;
                 nuevo.setNext(actual);
+                nuevo.setPrevious(null);
                 actual.setPrevious(nuevo);
             } else {
                 previo.setNext(nuevo);
@@ -138,5 +147,6 @@ public class DoubleLinkedListQueue<T> implements DoubleEndedQueue<T> {
         }
 
         first = firstOrdered;
+        last = getAt(size()-1);
     }
 }
