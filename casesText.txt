@@ -55,7 +55,6 @@ sizeEmptyQueue, sizeOneNode, sizeThreeNodes
 Comprobar el tamaño de colas con 0, 1 y 3 nodos respectivamente
 
 sortEmptyQueue:
-<<<<<<< HEAD
 Ordenar una cola vacía
 
 sortOneNode:
@@ -75,7 +74,8 @@ Escoger un nodo de una cola vacía
 
 getAtQueueNotEmptyWherePositionIsValid:
 Escoger un nodo de una cola no vacía cuando la posición es correcta
-=======
+
+sortEmptyQueue
 Sort de una cola vacía debería seguir dando null el primer elemento de la cola
 
 sortOneNode:
@@ -104,7 +104,6 @@ Find de un elemento en una cola no vacía que no contenga dicho elemento deberí
 
 findElementThatIsInTheQueue:
 Find de un elemento en una cola no vacía que sí contenga dicho elemento debería devolver el primer nodo que contenga el elemento
->>>>>>> 101d22afb022729eb1abc1135c1d954a8b928238
 
 getAtQueueNotEmptyWherePositionIsNotValid:
 Escoger un nodo de una cola no vacía cuando la posición es incorrecta
