@@ -55,6 +55,7 @@ sizeEmptyQueue, sizeOneNode, sizeThreeNodes
 Comprobar el tamaño de colas con 0, 1 y 3 nodos respectivamente
 
 sortEmptyQueue:
+<<<<<<< HEAD
 Ordenar una cola vacía
 
 sortOneNode:
@@ -74,6 +75,36 @@ Escoger un nodo de una cola vacía
 
 getAtQueueNotEmptyWherePositionIsValid:
 Escoger un nodo de una cola no vacía cuando la posición es correcta
+=======
+Sort de una cola vacía debería seguir dando null el primer elemento de la cola
+
+sortOneNode:
+Sort de una cola de un elemento debería seguir dando el primer elemento de la cola
+
+sortTwoNode, sortThreeNodes, sortFiveNodes.
+Sort de una cola desordenada de dos, tres y cinco elementos respectivamente
+
+getAtEmptyQueueNullValue:
+GetAt sobre una cola vacía debería dar null
+
+getAtQueueNotEmptyWherePositionIsValid:
+GetAt a una posición válida de una cola rellena
+
+getAtQueueNotEmptyWherePositionIsNotValid:
+GetAt a una posición inválida positiva de una cola rellena
+
+getAtQueueNotEmptyWherePositionIsNegative:
+GetAt a una posición inválida negativa de una cola rellena
+
+findEmptyQueue:
+Find de un elemento en una cola vacía debería devolver null
+
+findElementThatIsNotInTheQueue:
+Find de un elemento en una cola no vacía que no contenga dicho elemento debería devolver null
+
+findElementThatIsInTheQueue:
+Find de un elemento en una cola no vacía que sí contenga dicho elemento debería devolver el primer nodo que contenga el elemento
+>>>>>>> 101d22afb022729eb1abc1135c1d954a8b928238
 
 getAtQueueNotEmptyWherePositionIsNotValid:
 Escoger un nodo de una cola no vacía cuando la posición es incorrecta
