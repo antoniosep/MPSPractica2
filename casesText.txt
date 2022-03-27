@@ -54,14 +54,38 @@ Borrar el primer y último nodos de una cola de 3 nodos mediante delete
 sizeEmptyQueue, sizeOneNode, sizeThreeNodes
 Comprobar el tamaño de colas con 0, 1 y 3 nodos respectivamente
 
+sortEmptyQueue:
+Ordenar una cola vacía
 
+sortOneNode:
+Ordenar una cola de 1 nodo
 
+sortTwoNodes:
+Ordenar una cola de 2 nodos
 
+sortThreeNodes:
+Ordenar una cola de 3 nodos
 
+sortFiveNodes:
+Ordenar una cola de 5 nodos
 
+getAtEmptyQueueNullValue:
+Escoger un nodo de una cola vacía
 
+getAtQueueNotEmptyWherePositionIsValid:
+Escoger un nodo de una cola no vacía cuando la posición es correcta
 
+getAtQueueNotEmptyWherePositionIsNotValid:
+Escoger un nodo de una cola no vacía cuando la posición es incorrecta
 
+getAtQueueNotEmptyWherePositionIsNegative:
+Escoger un nodo de una cola no vacía cuando la posición es negativa
 
+findEmptyQueue:
+Encontrar la posición de un elemento en una cola vacía
 
+findElementThatIsNotInTheQueue:
+Encontrar la posición de un elemento en una cola no vacía pero que no se encuentre en la cola
 
+findElementThatIsInTheQueue:
+Encontrar la posición de un elemento en una cola no vacía que se encuentre en la cola
